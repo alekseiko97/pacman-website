@@ -1,0 +1,367 @@
+/* General stuff */
+
+@font-face {
+    src: url(images/prstartk.ttf);
+    font-family: prstartk;
+}
+
+html {
+    background-color: black;
+    text-transform: uppercase;
+    font-family: prstartk;
+    font-size: 18px;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+section {
+    padding-top: 80px;
+}
+
+section:not(:last-of-type)::after {
+    padding: 80px 0;
+    content: "";
+    display: table-cell;
+    border-bottom: 4px dotted yellow;
+    width: 200rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* To secure correct behavior in older browsers,
+   set the CSS display property for these HTML elements to block */
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+
+/* Navigation bar */
+
+nav {
+    height: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+nav ol {
+    margin: 0;
+}
+
+nav ol li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 20px 50px 0 0;
+}
+
+nav ol li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ol li a:hover {
+    color: yellow;
+    transition: .5s all;
+}
+
+/* Header and home section */
+
+header {
+    border-bottom: 4px dotted yellow;
+}
+
+header img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    transition: transform .2s;
+}
+
+#logo {
+    margin-top: 1.5rem;
+    margin-bottom: 10rem;
+}
+
+#logo:hover {
+    transform: scale(1.5);
+}
+
+header h1 {
+    -webkit-animation: blink 1s step-end infinite;
+    animation: blink 1s step-end infinite;
+    margin-bottom: 10rem;
+}
+
+@keyframes blink {
+    50% {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink {
+    50% {
+        visibility: hidden;
+    }
+}
+
+header h1:hover {
+    color: yellow;
+}
+
+/* High scores section */
+
+table {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    table-layout: fixed;
+    font-size: 20px;
+}
+
+td, th {
+    padding-bottom: 10px;
+}
+
+#high-scores {
+    margin: auto;
+    width: 100%;
+}
+
+#high-scores h2 {
+    color: yellow;
+    padding-bottom: 1rem;
+    font-size: 35px;
+}
+
+#high-scores h1 {
+    color: yellow;
+}
+
+#high-scores table th {
+    padding-bottom: 40px;
+    color: white;
+}
+
+/* Table rows colours */
+
+tr:nth-child(4n+1) {
+    color: #FFA002;
+}
+
+tr:nth-child(4n+2) {
+    color: #FF0401;
+}
+
+tr:nth-child(4n+3) {
+    color: #01f8f8;
+}
+
+tr:nth-child(4n+4) {
+    color: #ff60b0;
+} 
+
+span {
+    color: yellow;
+    text-transform: uppercase;
+    display: block;
+}
+
+.sprites {
+    width: 600px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-bottom: 50px;
+    animation-name: pacmanyo;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+}
+
+@keyframes pacmanyo {
+    0% {
+        transform: translateX(2000px);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+.sprites img {
+    margin-left: 10px;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+.pac {
+    transform: rotate(180deg);
+    margin-right: 40px;
+}
+
+/* How to play section */
+
+.sprites2 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    animation-name: chase;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+}
+
+@keyframes chase {
+    0% { transform: translateX(-2000px);}
+    100% { transform: translateX(2000px);}
+}
+
+.sprites2 * {
+    display: inline-block;
+}
+
+.sprites2 img {
+    width: 50px;
+    height: auto;
+}
+
+article {
+    text-align: center;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    width: 70%;
+    margin: auto;
+}
+
+article h2 {
+    margin-bottom: 2rem;
+}
+
+article p {
+    text-transform: none;
+    width: 70%;
+    font-size: 22px;
+    margin: auto;
+}
+
+.pac2 {
+    width: 0px;
+    height: 0px;
+    border-right: 40px solid transparent;
+    border-top: 40px solid #ffde00;
+    border-left: 40px solid #ffde00;
+    border-bottom: 40px solid #ffde00;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transform: rotate ( 180deg);
+    transform: scale(0.7);
+    animation-name: pac;
+    animation-duration: .2s;
+    animation-iteration-count: infinite;
+    margin-right: 5rem;
+}
+
+@keyframes pac {
+    0% {
+        border-right: 40px solid transparent;
+    }
+    49% {
+        border-right: 40px solid transparent;
+    }
+    50% {
+        border-right: 40px solid #ffde00;
+    }
+    100% {
+        border-right: 40px solid #ffde00;
+    }
+}
+
+/* Players section */
+
+#players {
+    text-align: center;
+}
+
+.sprites3 table {
+    width: 40%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.sprites3 table tr:nth-child(1) {
+    color: red;
+}
+
+.sprites3 table tr:nth-child(2) {
+    color: #ff60b0;
+}
+
+.sprites3 table tr:nth-child(3) {
+    color: #01f8f8;
+}
+
+.sprites3 table tr:nth-child(4) {
+    color: #ffd300;
+}
+
+.sprites3 img {
+    width: 50px;
+    height: 50px;
+    transform: rotateY(180deg);
+}
+
+.sprites3 p {
+    font-size: 20px;
+}
+
+.points {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.points > div {
+    display: inline-block;
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+.points div * {
+    display: inline-block;
+}
+
+.points p {
+    margin-right: 1rem;
+}
+
+.points img {
+    width: 50px;
+    height: 50px;
+}
+
+.rectangle {
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+}
+
+#small {
+    width: 10px;
+    height: 10px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+}
